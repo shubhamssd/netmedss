@@ -1,0 +1,190 @@
+<div class="first" style="display: flex; padding: 80px;">
+  <!-- Cart Section -->
+  <div class="container mt-4">
+    <h3>Your Cart</h3>
+
+    <!-- Offer Slider -->
+    <div class="slider-container">
+      <div class="slider">
+        <button class="nav-button left" (click)="prevImage()">&#10094;</button>
+        <img [src]="images[currentIndex]" class="slide-image" />
+        <button class="nav-button right" (click)="nextImage()">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- If Cart is Empty -->
+    <div *ngIf="cartItems.length === 0" class="text-center mt-4">
+      <h5>No items in cart.</h5>
+    </div>
+
+    <!-- If Cart Has Items -->
+    <div class="container" *ngIf="cartItems.length > 0" style="width: 60%; margin-left: 1%; margin-top: 3%;">
+      <div class="cart-title text-secondary fw-bold">PRODUCTS</div>
+
+      <div class="row g-3" *ngFor="let item of cartItems">
+        <div class="col-12">
+          <div class="d-flex p-3 border rounded shadow-sm bg-white align-items-start">
+
+            <!-- Product Image -->
+            <div class="me-3">
+              <img [src]="item.image" alt="{{ item.name }}" style="width: 80px; height: 80px; object-fit: contain;" />
+            </div>
+
+            <!-- Product Details -->
+            <div class="flex-grow-1">
+              <h6 class="mb-1">{{ item.name }}</h6>
+              <p class="text-muted mb-1">Mfr: {{ item.manufacturer }}</p>
+
+              <!-- Prices -->
+              <div style="margin-bottom: 5px;">
+                <span style="text-decoration: line-through; color: gray; font-size: 14px;">
+                  ₹{{ item.price | number: '1.2-2' }}
+                </span>
+                <span style="color: red; font-weight: bold; font-size: 16px; margin-left: 10px;">
+                  ₹{{ item.disc_price | number: '1.2-2' }}
+                </span>
+                <p style="color:red; margin: 0;">
+                  Save ₹{{ ((item.price - item.disc_price) * item.quantity) | number: '1.2-2' }}
+                </p>
+              </div>
+
+              <!-- Delivery -->
+              <p class="mb-0 text-secondary" style="font-size: 13px;">
+                Delivery between {{ item.deliveryStart }} - {{ item.deliveryEnd }}
+              </p>
+            </div>
+
+            <!-- Quantity + Remove -->
+            <div class="text-end ms-3 d-flex flex-column align-items-end justify-content-between">
+              <select [(ngModel)]="item.quantity" (change)="updateQuantity()" class="form-select form-select-sm mb-2 border border-danger text-danger" style="width: auto;">
+                <option *ngFor="let qty of [1,2,3,4,5]" [value]="qty">{{ qty }}</option>
+              </select>
+              <button class="btn btn-danger" (click)="removeFromCart(item)">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add More Button -->
+    <div *ngIf="cartItems.length > 0" class="cart-bottom-bar">
+      <a routerLink="/shop" class="add-more-link">Add more items</a>
+      <a routerLink="" class="plus-button">+</a>
+    </div>
+
+    <!-- Promo Slider Below Cart -->
+    <div class="sliderB">
+      <div class="sliderhead">
+        <span>
+          <img src="/assets/cart/offer-tag-icon.svg" />
+          NETMEDS FIRST customers get extra ₹8.30 cashback on this order
+        </span>
+      </div>
+      <div class="slideB">
+        <div class="slideC" *ngIf="slideContent.length > 0">
+          <img [src]="slideContent[currentIndex].img" />
+          <div class="data" style="display:block;">
+            <h5>{{ slideContent[currentIndex].title }}</h5>
+            <p>{{ slideContent[currentIndex].desc }}</p>
+          </div>
+          <button>+Add to cart</button>
+        </div>
+      </div>
+      <div class="member">
+        <span style="margin-left: 24%;">
+          <img src="/assets/cart/cart-membership.svg" />
+          Membership starting from ₹99 for 3 months
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Billing Sidebar -->
+  <div class="FirstA" style="background-color:aliceblue; width:26%; margin-top:8%">
+    <!-- Promo Code Dropdown -->
+    <div class="dropdown">
+      <div class="btn btn-grey dropdown-toggle" data-bs-toggle="dropdown">
+        <div class="drop">
+          <p>Promo Code (APPLY PROMOCODE / NMS<br> SUPERCASH)</p>
+          <div class="dropA">
+            <input type="radio" />
+            <label style="margin-left: 1%;">Apply Promo Code</label>
+            <p style="margin-left: 5%; font-size: 15px;">
+              Get flat discount! Vouchers applicable in<br> payment options
+            </p>
+            <p>Log in to see best offers and cashback deals</p>
+          </div>
+        </div>
+      </div>
+      <ul class="dropdown-menu" *ngIf="showDropdown">
+           <li><a class="dropdown-item" href="#">
+        <input type="radio">
+        <label>SAVE275</label>
+        <p>Rs. 275 Cashback + Flat 18% off on meds. <br>Minimum order value: Rs. 2500. T&C Apply</p>
+    </a></li>
+    <li><a class="dropdown-item" href="#">
+        <input type="radio">
+        <label>SAVE200</label>
+        <p>Rs. 200 Cashback + Flat 18% off on meds.<br> Minimum order value: Rs. 2000. T&C Apply</p>
+    </a></li>
+    <li><a class="dropdown-item" href="#">
+        <input type="radio">
+        <label>SAVE125</label>
+        <p>Rs. 125 Cashback + Flat 18% off on meds.<br> Minimum order value: Rs. 1500. T&C Apply</p>
+    </a></li>
+    <li><a class="dropdown-item" href="#">
+        <input type="radio">
+        <label>NMSNEW20</label>
+        <p>Flat 20% off on meds + up to 10% NMS<br> Cash on your First meds order. Minimum<br> order value: 799</p>
+    </a></li>
+    <li><a class="dropdown-item" href="#">
+        <input type="radio">
+        <label>CASH60</label>
+        <p>Rs. 25 Cashback + Flat 9% off on meds.<br> Minimum order value: Rs. 500. T&C Apply</p>
+    </a></li>
+      <li><a class="dropdown-item" href="#">
+        <input type="radio">
+        <label>FREEDEL</label>
+        <p>Get FREE delivery on orders above Rs. 750.<br> Limited period offer.</p>
+    </a></li>
+      <li><a class="dropdown-item" href="#">
+        <input type="radio">
+        <label>SKINCARE10</label>
+        <p>Get 10% OFF on select skincare products | <br>Min. order value Rs. 100 | Valid till 30th July</p>
+    </a></li>
+        <p style="padding:5px">
+          NOTE: Some medicines, including eyewear,<br> are eligible for ONLY up to 10% discount<br> on applying any coupon code.
+        </p>
+      </ul>
+    </div>
+
+    <!-- Free Delivery Message -->
+    <div class="second">
+      <div class="second1">
+        <img src="/assets/cart/get-free-delivery.svg" />
+      </div>
+      <div class="second2" style="margin-left: 15%; font-size: 14px;">
+        <p>₹0 delivery charges on this order</p>
+        <p>Get Free delivery on your first order</p>
+      </div>
+    </div>
+
+    <!-- Final Bill Summary -->
+    <h3>PAYMENT DETAILS</h3>
+    <p>Total MRP: ₹{{ totalMRP | number: '1.2-2' }}</p>
+    <p>Discount: ₹{{ totalDiscount | number: '1.2-2' }}</p>
+    <p>Payable: ₹{{ totalPayable | number: '1.2-2' }}</p>
+    <p>Savings: ₹{{ totalSavings | number: '1.2-2' }}</p>
+
+    <div class="last" style="display: flex; padding: 10px;">
+      <p>Total Payable:₹{{ totalPayable | number: '1.2-2' }}</p> 
+      <button>
+      <a routerLink="auth" class="add-more-link" (click)="proceedToCheckout()">Processed</a>
+    </button>
+    </div>
+
+    <p style="font-size: 10px;">
+      Netmeds is a technology platform to facilitate transaction of business. The products and services are offered for sale by the sellers. The user authorizes the delivery personnel to be his agent for delivery of the goods. For details read Terms & Conditions
+    </p>
+  </div>
+</div>

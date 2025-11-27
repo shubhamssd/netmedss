@@ -1,0 +1,39 @@
+/* css for img mean div */
+.healthcareimg1 {
+  height: 400px;
+  width: 260px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+/* css for img 1 */
+.healthcareimg1>img {
+  border-radius: 8px;
+  width: 230px;
+  height: 240px;
+  margin-left: 16px;
+  margin-top: 10px;
+}
+
+/* css for ing heading */
+.imgheading {
+  font-size: 18px;
+  font-family: "lato";
+  font-weight: 400;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.imgheading>a {
+  color: black;
+  text-decoration: none;
+}
+
+.imgcontent {
+  font-size: 14px;
+  font-family: "lato";
+  margin-left: 10px;
+  margin-right: 10px;
+  color: rgba(21, 27, 57, .6);
+}

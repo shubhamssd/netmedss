@@ -1,0 +1,62 @@
+<div class="container mt-4">
+  <h1>Order Process</h1>
+  <form [formGroup]="billingForm" (ngSubmit)="onSubmit()">
+    <!-- Full Name -->
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input type="text" formControlName="fullName" class="form-control" />
+      <div *ngIf="submitted && f['fullName'].errors" class="text-danger small">
+        Full name is required
+      </div>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <input type="text" formControlName="phone" class="form-control" />
+      <div *ngIf="submitted && f['phone'].errors" class="text-danger small">
+        <div *ngIf="f['phone'].errors['required']">Phone number is required</div>
+        <div *ngIf="f['phone'].errors['pattern']">Enter valid 10-digit Indian number</div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Pincode</label>
+      <input type="text" formControlName="pincode" class="form-control" />
+      <div *ngIf="submitted && f['pincode'].errors" class="text-danger small">
+        <div *ngIf="f['pincode'].errors['required']">Pincode is required</div>
+        <div *ngIf="f['pincode'].errors['pattern']">Enter 6-digit pincode</div>
+      </div>
+    </div>
+   <div class="second" style="display: flex; gap: 15px;">
+     <div class="mb-3">
+      <label class="form-label">City</label>
+      <input type="text" formControlName="city" class="form-control" />
+      <div *ngIf="submitted && f['city'].errors" class="text-danger small">
+        City is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">State</label>
+      <input type="text" formControlName="state" class="form-control" />
+      <div *ngIf="submitted && f['state'].errors" class="text-danger small">
+        State is required
+      </div>
+    </div>
+   </div>
+    <div class="mb-3">
+      <label class="form-label">Landmark</label>
+      <input type="text" formControlName="landmark" class="form-control" />
+      <div *ngIf="submitted && f['landmark'].errors" class="text-danger small">
+        Landmark is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Address</label>
+      <textarea formControlName="address" class="form-control" rows="3"></textarea>
+      <div *ngIf="submitted && f['address'].errors" class="text-danger small">
+        Address is required
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Proceed to Payment</button>
+  </form>
+</div>

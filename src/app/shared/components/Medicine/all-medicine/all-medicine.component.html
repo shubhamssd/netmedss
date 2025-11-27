@@ -1,0 +1,104 @@
+ <div class="content">
+            <div class="headingcontent">
+                <p class="headingcontent1">Find Your Prescription Medicines</p>
+                <p class="headingcontent2">Shop by Drug Category</p>
+            </div>
+            <div class="abcdbuttons border w-75">
+                <button *ngFor="let btnHead of buttonHeading">{{btnHead}}</button>
+            </div>
+
+            <div class="medicines">
+                <div class="d-flex flex-column">
+                    <p class="letter">A</p>
+                    <a *ngFor="let a of medicineA" [routerLink]="['/shared/prescriptionMedicines/', a.routepath]"> {{a.category}}</a>
+
+
+                    <p class="letter">B</p>
+                    <a *ngFor="let b of medicineB"> {{b}} </a>
+
+
+                    <p class="letter">C</p>
+                     <a *ngFor="let c of medicineC"> {{c}} </a>
+
+
+                    <p class="letter">D</p>
+                      <a *ngFor="let d of medicineD"> {{d}} </a>
+                </div>
+
+
+                <div class="d-flex flex-column">
+                    <p class="letter">E</p>
+                     <a *ngFor="let e of medicineE"> {{e}} </a>
+
+
+                    <p class="letter">F</p>
+                      <a *ngFor="let f of medicineF"> {{f}} </a>
+
+
+                    <p class="letter">G</p>
+                     <a *ngFor="let g of medicineG"> {{g}} </a>
+
+
+                    <p class="letter">H</p>
+                     <a *ngFor="let h of medicineH"> {{h}} </a>
+
+
+                    <p class="letter">I</p>
+                     <a *ngFor="let i of medicineI"> {{i}} </a>
+
+                </div>
+                     <div class="d-flex flex-column">
+                    <p class="letter">K</p>
+                     <a *ngFor="let k of medicineK"> {{k}} </a>
+
+
+                    <p class="letter">L</p>
+                      <a *ngFor="let l of medicineL"> {{l}} </a>
+
+
+                    <p class="letter">M</p>
+                     <a *ngFor="let m of medicineM"> {{m}} </a>
+
+
+                    <p class="letter">N</p>
+                      <a *ngFor="let n of medicineN"> {{n}} </a>
+
+
+                    <p class="letter">O</p>
+                      <a *ngFor="let o of medicineO"> {{o}} </a>
+
+
+                    <p class="letter">P</p>
+                     <a *ngFor="let p of medicineP"> {{p}} </a>
+
+                </div>
+
+
+                <div class="d-flex flex-column">
+                    <p class="letter">R</p>
+                     <a *ngFor="let r of medicineR"> {{r}} </a>
+
+
+                    <p class="letter">S</p>
+                     <a *ngFor="let s of medicineS"> {{s}} </a>
+
+
+                    <p class="letter">T</p>
+                     <a *ngFor="let t of medicineT"> {{t}} </a>
+
+
+                    <p class="letter">U</p>
+                     <a *ngFor="let u of medicineU"> {{u}} </a>
+
+
+                    <p class="letter">V</p>
+                      <a *ngFor="let v of medicineV"> {{v}} </a>
+
+
+                    <p class="letter">W</p>
+                      <a *ngFor="let w of medicineW"> {{w}} </a>
+
+                </div>
+            </div>
+        </div>
+

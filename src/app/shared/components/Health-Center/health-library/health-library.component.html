@@ -1,0 +1,81 @@
+<div>
+    <p class="heading">Health Library</p>
+</div>
+<div class="helthmeancontent col-12">
+    <div class="classleft col-9">
+        <div class="healthbutton">
+            <button class="b-all" (click)="allData('all')">All</button>
+            <button (click)="allData('Ailments')">Ailments</button>
+            <button (click)="allData('beautyFitness')">Beauty & Fitness</button>
+            <button (click)="allData('food')">Food</button>
+            <button>Wellness</button>
+            <button>In the News</button>
+            <button>Pet Care</button>
+            <button>Video</button>
+        </div>
+        <div class="d-flex blogs">
+            <app-blogs [catkey]="category"></app-blogs>
+        </div>
+    </div>
+    <div class="classright col-2">
+        <div class="searchbarcss">
+            <input type="text" class="searchbarinput" placeholder="Search posts here...">
+            <img src="" alt="">
+            <h3 class="imgheading"></h3>
+        </div>
+        <div class="rightside1">
+            <p class="rightheading">Categories</p>
+            <ul class="">
+                <li class="list-group-item" *ngFor="let data of allCatagory"><a href="" class="lianchortag">{{data}}</a></li>
+
+            </ul>
+            <hr>
+            <p class="rightheading">Archives</p>
+            <ul>
+                <li class="list-group-item" *ngFor="let year of allyears"><a href="" class="lianchortag">{{year}}</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="Videocontenor">
+    <div class="classforheading">
+        <div class="firstheading">MAKE THE MOST OF</div>
+        <div class="secondheading">Netmeds Videos</div>
+        <div class="paregraphline">Look and learn. Binge-watch these amazing health hacks, get useful
+            information on
+            new and trending topics
+        </div>
+    </div>
+    <div class="classforvideo">
+        <div class="video1">
+            <iframe width="488px" height="260px" src="https://www.youtube.com/embed/XVH0RgscLDw?si=rP-PwNOplxDeKl_d"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <h1>5 Tips For Chiseled Jawline #Shorts</h1>
+            <p>Sculpted jawlines have become a popular trend in the last few decades. A fitness motive, an
+                aestheti..</p>
+        </div>
+        <div class="video2">
+            <a href=""><img src="https://www.netmeds.com/images/cms/magefan_blog/nmslite/1753160754_Cover_480x180.jpg"
+                    alt="" class="img2"></a>
+            <h1 class="imheading">Top 7 Trending Adaptogens For Skincare</h1>
+            <p class="pimg">Adaptogens are natural substances, primarily herbs and mushrooms, that help the ..
+            </p>
+            <hr>
+            <button class="viewallbutton">View All</button>
+        </div>
+        <div class="video3">
+            <a href=""><img
+                    src="https://www.netmeds.com/images/cms/magefan_blog/nmslite/1753201854_Cover_480x180_(7).jpg"
+                    alt="" class="img3"></a>
+            <h1 class="imheading">5 Amazing Health Benefits Of Revand Chini..</h1>
+            <p class="pimg">Revand Chini, also known as Indian Rhubarb, is a potent medicinal herb used exte..
+            </p>
+            <hr>
+        </div>
+    </div>
+</div>

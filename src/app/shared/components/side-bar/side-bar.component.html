@@ -1,0 +1,45 @@
+<div class="sidebar-card">
+    <h5 class="sidebar-heading">Categories</h5>
+    <mat-nav-list>
+        <mat-expansion-panel *ngFor="let section of sidebarItems">
+            <mat-expansion-panel-header>
+                <mat-panel-title>{{ section.title }}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+                <mat-list-item *ngFor="let item of section.children"
+                    [routerLink]="['/products/productList', item.route]" routerLinkActive="active-link">
+                    {{ item.label }}
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-expansion-panel>
+    </mat-nav-list>
+</div>
+
+<div class="filter-card">
+    <div>
+        <h6 class="filter-heading">Brand</h6>
+        <input type="search" [(ngModel)]="brandSearch" placeholder="Search Brand" class="form-control search-box" />
+
+        <div class="filter-list">
+            <label *ngFor="let brand of brands">
+                <input type="checkbox" [value]="brand.name" (change)="toggleBrandSelection(brand.name)"
+                    [checked]="selectedBrands.includes(brand.name)" />
+                {{ brand.name }} <span class="count">({{ brand.count }})</span>
+            </label>
+        </div>
+    </div>
+
+    <div>
+        <h6 class="filter-heading">Manufacturers</h6>
+        <input type="search" [(ngModel)]="mfgSearch" placeholder="Search manufacturer"
+            class="form-control search-box" />
+
+        <div class="filter-list">
+            <label *ngFor="let mfg of manufacturer">
+                <input type="checkbox" [value]="mfg.name" (change)="toggleBrandSelection(mfg.name)"
+                    [checked]="selectedBrands.includes(mfg.name)" />
+                {{ mfg.name }} <span class="count">({{ mfg.count }})</span>
+            </label>
+        </div>
+    </div>
+</div>

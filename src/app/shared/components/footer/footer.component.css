@@ -1,0 +1,226 @@
+footer {
+    padding: 36px 30px 0;
+    color: #0b1219;
+    background: #fff;
+    width: 100%;
+    font-size: 12px;
+    background-image: linear-gradient(to bottom, rgba(36, 174, 177, 0) 50%, rgba(36, 174, 177, .7) 130%), 
+                      linear-gradient(to bottom, #fff, #fff);
+    margin-top: 0; /* Removed extra top space */
+}
+
+.footer-btm {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1280px;
+    margin: 0 auto 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(11, 18, 25, .2);
+}
+
+.stores-content {
+    display: flex;
+    align-items: center;
+}
+
+.stores-content img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.ft-txt {
+    font-family: LatoSemiBold, sans-serif;
+    font-size: 16px;
+    color: #0b1219;
+}
+
+.number {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Logo & Intro Text */
+.footer-top {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto 50px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(11, 18, 25, .2);
+    gap: 32px;
+}
+
+.footer-logo {
+    width: 212px;
+}
+
+.footer-txt {
+    flex: 1;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: LatoSemiBold, sans-serif;
+    color: rgba(11, 18, 25, .7);
+    display: flex;
+    align-items: center;
+}
+
+/* Footer Links */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 32px;
+}
+
+footer .footer-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer .footer-container ul li .footer_title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: LatoBold, sans-serif;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+footer .footer-container ul li a {
+    line-height: 28px;
+    font-size: 14px;
+    font-family: Lato, sans-serif;
+    color: #0b1219;
+    text-decoration: none;
+}
+
+footer .footer-container ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Newsletter Subscribe */
+footer .footer-container .subscribe {
+    width: 284px;
+    font-size: 14px;
+}
+
+footer .footer-container .subscribe form {
+    margin-top: 16px;
+}
+
+footer .footer-container .subscribe .control {
+    display: flex;
+    border-bottom: 1px solid rgba(11, 18, 25, .2);
+    padding-bottom: 6px;
+}
+
+footer .footer-container .subscribe .control input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 8px;
+}
+
+footer .footer-container .subscribe .control .go-btn {
+    border: none;
+    background: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.app-store {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.app-store .store-icon img {
+    height: 40px;
+}
+
+/* Payment Partners */
+footer .payment-partner1 {
+    max-width: 1280px;
+    margin: 32px auto;
+}
+
+footer .payment-partner1 .ft-head h2 {
+    font-family: LatoSemiBold, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+footer .payment-partner1 .our-partners {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+footer .payment-partner1 .our-partners img {
+    height: 40px;
+}
+
+/* Copy Block */
+footer .copyblock {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 16px;
+    border-top: 1px solid rgba(11, 18, 25, .1);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: rgba(11, 18, 25, .5);
+}
+
+footer .copyblock a {
+    color: rgba(11, 18, 25, .5);
+    text-decoration: none;
+}
+
+footer .copyblock a:hover {
+    text-decoration: underline;
+}
+
+
+/* ≤ 900px: Two-column footer links */
+@media (max-width: 900px) {
+    .footer-container {
+        gap: 24px;
+    }
+    .footer-container > ul,
+    .footer-container > .subscribe {
+        flex: 1 1 calc(50% - 24px);
+    }
+}
+
+/* ≤ 600px: Stack columns */
+@media (max-width: 600px) {
+    .footer-btm,
+    .footer-top,
+    .footer-container,
+    footer .payment-partner1,
+    footer .copyblock {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .footer-container > ul,
+    .footer-container > .subscribe {
+        flex: 1 1 100%;
+    }
+    .stores-content img {
+        width: 70px;
+        height: 70px;
+    }
+    .ft-txt {
+        font-size: 14px;
+    }
+    .number {
+        font-size: 22px;
+    }
+}

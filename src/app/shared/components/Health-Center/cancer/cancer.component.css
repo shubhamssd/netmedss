@@ -1,0 +1,310 @@
+  /* Cancer Banner */
+.cancer-banner-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.cancer-banner {
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Rounded three images */
+.expand-on-hover {
+  border-radius: 25px;
+  width: 85%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+.col{
+   padding-left: 0px ;
+  padding-right: 0px;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.expand-on-hover:hover {
+  transform: scale(1.05);
+}
+
+/* text */
+h2 {
+  font-size: 35px;
+   font-family: LatoBold;
+  letter-spacing: 0.25px;
+  padding: 4px 0px 0;
+}
+
+p {
+  font-size: 21px;
+}
+
+ /* Diseases Info */
+.cancer-icon{
+  border-radius: 16px;
+  vertical-align: middle;
+  max-width: 90%;
+  border-style: none;
+}
+
+/* cancer-page-banner */
+.ca-card-desktop{
+   width: 100%;
+  max-width: 100%; 
+  vertical-align: middle;
+  border-style: none;
+  height: auto;
+  background-color: white;
+  border: none;
+  display: block;
+  margin-bottom: 50px;
+
+}
+.ca-content-pad-text{
+  background-color: white;
+  font-weight: bold;
+  font-size: 35px;
+  letter-spacing: 0.25px;
+  display: block;
+  margin: 0;
+  padding-left: 200px;
+   display: inline-block;
+}
+
+.ca-content-pad3 {
+  display: flex;
+  justify-content: center; /* center all 3 images */
+  gap: 20px; /* space between each image */
+  padding: 20px;
+  background-color: white;
+  flex-wrap: wrap; /* for responsiveness */
+}
+
+.video-card img {
+  width: 320px;      
+  height: auto;
+  border-radius: 20px; /* rounded corners */
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+/* e-book */
+.ca-ebook-main{
+    background-color: #ece8e4;
+    height: 14%;
+    padding-bottom: 1150px;
+    display: grid;
+}
+
+.ca-ebook-submain{
+    background-color: #e6d6e2;
+    display: flex;
+    position: relative;
+    height: 85%;
+}
+
+.ca-ebook-image{
+  width: 600px;
+  padding: 2% 2% 0 5%;
+    position: relative;
+}
+
+.ca-ebook-content{
+      position: absolute;
+    transform: translate(240%, 60%);
+    width: 25%;
+    font-family: initial;
+    
+}
+
+.ca-ebook-content-para{
+  font-size: xxx-large;
+    line-height: initial;
+}
+
+.ca-underline-text{
+  text-decoration: underline;
+}
+.ca-download-ebook a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #be3d86;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+strong{
+  -webkit-text-stroke: thin;
+    letter-spacing: 1px;
+}
+
+/* Main Wrapper */
+.ca-why-netmeds-wrapper {
+  background-color: #ece8e4;
+  padding: 0;
+  margin: 0;
+}
+
+/* Heading Text */
+.ca-content-pad-text {
+  background-color: #ece8e4;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.ca-content-pad-text h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px 0;
+  font-family: sans-serif;
+   padding-left: 100px;
+}
+
+/* Image Container */
+.ca-why-images {
+  background-color: #ece8e4;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* Desktop Image */
+.ca-card-desktop {
+  width: 100%;
+  height: auto;
+  background-color: #ece8e4;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .ca-card-desktop {
+    display: none;
+  }
+}
+
+/* netmeds-offerings.component.css */
+.ca-netmeds-offerings-wrapper {
+  padding: 0;
+  margin: 0;
+  background-color: #ece8e4;
+}
+
+.ca-card-desktop {
+  width: 100%;
+  height: auto;
+  background-color: #ece8e4;
+}
+
+/* membership-section */
+.ca-netmeds-benefits-wrapper {
+  background-color: #f3f3f3;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.nfm-pharmacy-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+   padding: 2% 0;
+  gap: 30px;
+   width: 100%;
+}
+   
+.nfm-pharmacy-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: transparent;
+  width: 40%;
+  min-height: 150px;
+    display: flex;
+    justify-content: center;
+}
+.ca-nfm-gif {
+    width: 120px;
+}
+.ca-nfm-gif img,
+.ca-pharmacy-icon img {
+  width: 100px;
+  height: auto;
+}
+
+.ca-benefit-heading {
+  color: #418f9c;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.ca-benefit-text {
+  color: #dd643a;
+  font-size: 16px;
+  line-height: 1.5;
+  
+}
+
+.nfm-pharmacy-line {
+  width: 2px;
+  height: 120px;
+  background-color: #ccc;
+}
+
+strong{
+  color: black;
+  -webkit-text-stroke: thin;
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+p{
+  font-size: 21px;
+}
+
+/* footer */
+.ca-footer {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.ca-footer-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.ca-footer-items li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #333;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.ca-footer-items li a:hover {
+  color: #be3d86;
+}

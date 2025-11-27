@@ -1,0 +1,38 @@
+#wellnessCarousel .carousel-item img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    user-select: none;
+}
+
+.product-slider .card-img-top {
+    max-height: 150px;
+    object-fit: contain;
+    background: white;
+    padding: 1rem;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    user-select: none;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #00b0e1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #00628b;
+}
+
+.greenback {
+    background: linear-gradient(180deg, #84BE52 0%, #c8e8a7 100%);
+}
+
+.blueback {
+    background: linear-gradient(180deg, #3498db 0%, #b3e0fc 100%);
+}
+
+.golden-btn {
+    background: linear-gradient(75deg, #fbc82f, #fff48a 100%);
+    padding: 10px 30px;
+}

@@ -1,0 +1,104 @@
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+.product-detail{
+    display: flex;
+    gap: 20px; 
+    height: 900px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 2px 10px 20px #f6f5f5;
+
+}  
+.product-left-info{
+    width: 45%;
+    display: flex;
+}
+.product-right-info{
+    width: 55%;
+}
+.thumb_imges{
+    cursor: pointer; 
+    border: 1px solid #ccc;
+    gap: 20px;
+    background-color: none;
+}
+.product-details-disc-price{
+    font-weight: 500;
+}
+.product-detail-price{
+    font-size: 13px;
+    margin-top: 2px;
+    color: #272d327a;
+    font-weight: 500;
+    text-decoration: line-through;
+}
+.product-discount{
+    color:#dd4679;
+    font-size: 14px;
+    font-weight: 500;
+}
+.product-details-gluco-devices{
+    padding: 5px 10px 5px 10px;
+    border-radius: 30px;
+    font-size: 14px;
+    color:#83878a;
+    background-color: #d9d9d9;
+}
+.product-detail-content{
+    font-size: 14px;
+    font-weight: 400;
+    color: #8a8181;
+    gap: 0;
+    font-style: italic;
+}
+
+.count{
+    border: 1px solid #c4c4c4;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+.product-details-add-to-cart{
+    background-color:#24aeb1 ;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    padding: 12px 17px;
+}
+.product-expiry{
+    display: flex;
+}
+.product-expiry p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #958e8e;
+}
+.product_disc_details{
+    background-color: #e3dcdc;
+    border-radius: 5px;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+.product_disc_info{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.product_disc_details p {
+    font-size: 16px;
+    font-weight: 500;
+}

@@ -1,0 +1,230 @@
+.slider-container {
+  display: flex;
+  margin-top: 30px;
+}
+
+.slider {
+  position: relative;
+  width: 800px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 24px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  z-index: 1;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.nav-button.left {
+  left: 10px;
+}
+
+.nav-button.right {
+  right: 10px;
+}
+.cart-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 15px 10px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  width: 60%;
+}
+
+.add-more-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.plus-button {
+  background-color: white;
+  border: 1px solid #007bff;
+  color: #007bff;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.plus-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+.sliderB{
+    border: 3px solid rgb(255, 35, 193);
+    width:60%;
+    max-height: 40%;
+    border-radius: 10px;
+}
+.slideB {
+  width: 100%;
+  max-width: 700px;
+  margin-left: 1%;
+  /* margin: auto; */
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+.sliderhead{
+     border-bottom: 1px solid rgb(172, 167, 167);
+    margin-left: 1%;
+    font-size: 20px;
+}
+
+.slideC {
+    display: flex;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.5s ease-in-out;
+  border-radius: 10px;
+}
+
+.slideC img {
+  width: 30%;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.slideC h5 {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.slideC p {
+  margin: 0 0 10px;
+  color: #666;
+}
+
+.slideC button {
+    width:20%;
+    height:20%;
+  background-color: #ffff51;
+  color: rgb(8, 8, 8);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.member{
+    background-color:  rgb(255, 35, 193);
+    color: white;
+}
+.dropdown-item{
+  border-style: dashed;
+  border:2px rgb(29, 27, 27);
+  background-color:aliceblue;
+  border-radius: 10px;
+  margin-top: 1%;
+}
+.dropdown-item p{
+  font-size: 15px;
+}
+.dropdown-menu{
+   list-style: none;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+.second{
+  display: flex;
+  background-color: rgb(24, 208, 202);
+  justify-content: center;
+   padding: 5px;
+  border-radius: 10px;
+  color: white;
+}
+.second1 img{
+  width: 150%;
+}
+.payment-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.total {
+  font-size: 18px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.savings {
+  margin-top: 15px;
+  color: green;
+}
+.featured-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  min-width: 160px;
+  max-width: 160px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+}
+
+.product-card img {
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+.last button{
+  border-radius: 5px;
+  margin-left: 4%;
+   background-color: #007bff;
+}
+.last button a{
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+}

@@ -1,0 +1,51 @@
+<div class="row me-2">
+    <div class="col-3">
+        <app-side-bar (filtersChanged)="applyFilters($event)"></app-side-bar>
+    </div>
+
+    <div class="col-9">
+        <div>
+            <img *ngIf="sectionBannerImg" [src]="sectionBannerImg" class="shadow-sm w-100 rounded" />
+            <div *ngIf="!sectionBannerImg"
+                class="banner-div  rounded d-flex align-items-start justify-content-start me-2" style="height: 180px;">
+                <p class="banner-text ms-4 mt-3">Diabetes Support</p>
+            </div>
+            <div class="row my-4 bg-white p-1 rounded-2">
+                <div class="col-md-3  " *ngFor="let category of categories"
+                    (click)="navigateToCategory(category.categoryName)">
+                    <div class="card my-3 p-2" style="cursor: pointer;">
+                        <img class="pro_img" [src]="category.categoryImage" />
+                    </div>
+                </div>
+            </div>
+        <div class="row my-4 bg-white p-1 rounded-2">
+            <div class="col-md-3"
+                *ngFor="let product of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: page }"
+                (click)="goToDetail(product)">
+
+                <div class="card my-3 p-2 ms-2" style="cursor: pointer;">
+                    <div class="d-flex justify-content-center">
+                        <img class="pro_img" [src]="product.image" />
+                    </div>
+                    <p class="product_content mt-3">{{ product.name }}</p>
+
+                    <div class="d-flex gap-2 flex-wrap">
+                        <p class="product_category mt-2" *ngFor="let dt of product.category">{{ dt }}</p>
+                    </div>
+
+                    <span class="drug_varient mt-2">Mkt: {{ product.brand | custom}}</span>
+                    <p class="product_disc_price mt-1">₹{{ product.disc_price }}</p>
+                    <span class="text-decoration-line-through product_old_price mt-1">
+                        MRP ₹{{ product.price }}
+                    </span>
+                    <button class="btn mt-4">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <pagination-controls (pageChange)="page = $event" [autoHide]="true" [directionLinks]="true"
+            previousLabel="‹ Prev" nextLabel="Next ›" class="custom-pagination d-flex justify-content-center">
+        </pagination-controls>
+    </div>
+</div>

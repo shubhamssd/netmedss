@@ -1,0 +1,7 @@
+<div class="d-flex flex-wrap ms-4 gap-3">
+    <div class="healthcareimg1" *ngFor="let blog of catdata">
+        <img [src]="blog.img" alt="">
+        <h3 class="imgheading"><a href="">{{blog.heading}}</a></h3>
+        <p class="imgcontent">{{blog.description}}</p>
+    </div>
+</div>

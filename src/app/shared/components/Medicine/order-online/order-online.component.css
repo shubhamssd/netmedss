@@ -1,0 +1,148 @@
+/* ========== BASE ========== */
+body {
+  font-size: 13px;
+  background-color: #f3f3f3;
+  margin: 0;
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+img { max-width: 100%; height: auto; display: block; }
+
+.page-title {
+  font-size: 32px;
+  margin: 40px 10px 10px; /* reduced because header removed */
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* ========== PRESCRIPTION / CONSULT BLOCK ========== */
+.main-container {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background:#fff;
+  margin-top: 10px;
+  padding: 0 8px;
+}
+.prescription-block {
+  gap: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.border-lg-end { border-right: 1px solid #000; }
+.feature-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.text { white-space: pre-wrap; font-size: 14px; margin: 0 0 4px; }
+.action-btn {
+  width: 100%;
+  max-width: 320px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border: none;
+}
+.upload-btn { background:#ef4281 !important; }
+.consult-btn { background:#32aeb1 !important; }
+.btn-icon { width:20px; height:20px; margin-right:6px; }
+
+/* ========== CATEGORY SECTION ========== */
+.section-heading {
+  font-size: 30px;
+  margin: 32px 15px 8px;
+  font-weight: 600;
+}
+.parent {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 8px 12px 0;
+  background:#fff;
+}
+.child {
+  flex: 1 1 180px;
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.category-img {
+  width: 100%;
+  height: auto;
+  max-height: 230px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.08);
+}
+
+/* ========== BOOTSTRAP CAROUSEL ADJUSTMENTS ========== */
+.carousel1 { margin-top: 30px; }
+.carousel-item img { object-fit: cover; }
+
+/* ========== TOP BRANDS (Swiper) ========== */
+.brands-section {
+  background: rgba(214,241,244,0.39);
+  margin-top: 40px;
+  padding: 24px 0 32px;
+}
+.brands-title {
+  font-size: 22px;
+  margin: 0 0 12px 16px;
+  font-weight: 600;
+  color: #000;
+}
+.brands-container { padding: 0 16px; }
+.brand-card {
+  width: 100%;
+  max-width: 13rem;
+  margin: 0 auto;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* ========== UTILITIES / COMMON ========== */
+h1,h2,h3,h4 { margin:0 0 8px; }
+.btn { font-size:14px; }
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* 1200px+ */
+@media (min-width:1200px) {
+  .parent .child { flex: 1 1 180px; }
+}
+
+/* <=1199px */
+@media (max-width:1199.98px) {
+  .parent .child { flex: 1 1 18%; max-width:19%; }
+}
+
+/* <=992px */
+@media (max-width:992px) {
+  .border-lg-end { border-right:0 !important; }
+  .parent .child { flex: 1 1 30%; max-width:30%; }
+}
+
+/* <=768px */
+@media (max-width:768px) {
+  .feature-icon { width:80px; height:80px; }
+  .parent .child { flex: 1 1 30%; max-width:32%; }
+}
+
+/* <=576px (phones) */
+@media (max-width:576px) {
+  .page-title { font-size:26px; margin-top:28px; }
+  .parent .child { flex: 1 1 46%; max-width:46%; }
+  .category-img { max-height: 200px; }
+  .action-btn { max-width:100%; }
+}
+
+/* <=360px (very small) */
+@media (max-width:360px) {
+  .parent .child { flex: 1 1 100%; max-width:100%; }
+  .page-title { font-size:24px; }
+}

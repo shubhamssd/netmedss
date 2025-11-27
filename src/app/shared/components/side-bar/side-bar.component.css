@@ -1,0 +1,151 @@
+/* Sidebar container */
+:host {
+  display: block;
+  /* background-color: #fff; */
+  /* border-right: 1px solid #e0e0e0; */
+  height: 100%;
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Section titles (mat-expansion-panel headers) */
+mat-expansion-panel-header {
+  background-color: #f8f9fa;
+  font-weight: 500;
+  font-size: 15px;
+  color: #333;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for headers */
+mat-expansion-panel-header:hover {
+  background-color: #e3f2fd;
+  font-weight: 500;
+}
+
+/* List items inside each category */
+mat-list-item {
+   font-size: 14px;
+  color: #757575; /* grey text */
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: color 0.3s, background-color 0.3s;
+  margin-bottom: 4px;
+}
+
+mat-list-item:hover {
+  color: #0072bc; /* Netmeds' brand blue */
+}
+
+/* Active route styling */
+.active-link {
+  color: #0072bc;
+  font-weight: 600;
+}
+
+/* Remove default material shadows if needed */
+mat-expansion-panel {
+  box-shadow: none !important;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+:host {
+  overflow-y: auto;
+}
+
+mat-list-item:hover {
+  color: #000; /* black text */
+  background-color: #f1f1f1; /* optional: light background on hover */
+  cursor: pointer;
+}
+
+/* Active router link */
+.active-link {
+  font-weight: 600;
+  color: #000; /* black text for active */
+  background-color: #e3f2fd; /* optional: light blue active background */
+  border-radius: 4px;
+}
+
+.sidebar-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  max-height: 80vh; /* adjust as needed */
+  overflow-y: auto;
+  /* width: calc(100% - 10px);  */
+  width: 240px;
+}
+
+/* Optional: Scrollbar style for Chrome/Edge */
+.sidebar-card::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar-card::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.sidebar-card::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Header text style */
+.sidebar-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #212121;
+}
+
+.filter-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
+  overflow-y: auto;
+  /* width: calc(100% - 10px);  */
+  width: 240px;
+  margin-top: 30px;
+  
+
+}
+
+.filter-heading {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #212121;
+}
+
+.search-box {
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.filter-list label {
+  display: block;
+  font-size: 14px;
+  color: #6e6e6e;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.filter-list label:hover {
+  color: #000;
+}
+
+.count {
+  color: #999;
+  font-size: 13px;
+}
+

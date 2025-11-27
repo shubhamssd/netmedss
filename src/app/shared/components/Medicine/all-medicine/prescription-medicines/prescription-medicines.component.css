@@ -1,0 +1,76 @@
+.medicines-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 20px; /* space between cards */
+  margin-top: 10px;
+}
+
+.medicine-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  padding: 10px;
+  min-height: 150px; /* equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* css for heding */
+.headingcontent{
+    padding-left: 20px;
+    color:#24aeb1;
+     margin-left: 72px;
+}
+.headingcontent1{
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 0;
+}
+/* css for next line content */
+.headingcontent2{
+    font-size: 14px;
+    font-style: italic;
+}
+/* css for abcd button */
+.abcdbuttons{
+    background-color: #ffffff;
+    padding: 16.8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: 80px;
+    margin-top: 30px;
+    /* display: flex;
+    justify-content: center; */
+}
+.abcdbuttons > button{
+    font-size: 14px;
+    /* padding-right: 20px; */
+    padding: 0px 12px;
+    border: none;
+    border-right:1px solid #ccc;
+    background-color: #fff;
+    font-weight: 700;
+}
+
+.forbuttonall{
+    color: #24aeb1;
+}
+
+
+/* css for medicines name */
+.medicines{
+    display: flex;
+    flex-wrap: wrap;
+    gap:40px;
+    justify-content: center;
+}
+
+/* css for letter */
+.letter{
+    font-weight: 700;
+    font-size: 19px;
+    margin-left: 5px;
+    padding-top: 20px;
+    padding-left: 40px;
+}

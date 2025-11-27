@@ -1,0 +1,167 @@
+<h2 class="mt-4 mb-3 fw-semibold">Wellness</h2>
+<!-- Carousel -->
+<div id="wellnessCarousel" class="carousel slide carousel-fade mb-3" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div *ngFor="let img of carouselImages; let i = index" class="carousel-item" [class.active]="i === 0">
+            <img [src]="img.src" [alt]="img.alt" class="d-block w-100" />
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#wellnessCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#wellnessCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Swiper 1 -->
+<div class="pb-3 greenback">
+    <h3 class="p-2 mt-4 mb-3 fw-semibold text-white">Best of Ayurvedic, Siddha & Unani</h3>
+    <div class="d-flex gap-4">
+        <img src="assets/images/Wellness/Ayurveda_background.png" height="355px" alt="">
+        <div class="w-75 ms-5 ps-2">
+            <swiper [slidesPerView]="5" [spaceBetween]="10" [navigation]="true" [pagination]="{ clickable: true }"
+                [breakpoints]="breakpoints" class="product-slider w-100">
+                <ng-template swiperSlide *ngFor="let product of ayurproducts">
+                    <div class="card rounded-3 shadow-sm" style="height: 350px;">
+                        <img class="card-img-top" [src]="product.image" alt="" />
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <p class="card-text small">
+                                {{ product.name }}<br />
+                                <b>{{ product.disc_price }}</b>
+                                <span class="text-muted"><del>{{ product.price }}</del></span><br />
+                                <span class="text-success fw-semibold">GET {{ product.disc }}% off</span>
+                            </p>
+                            <a class="btn btn-info col-12" (click)="addToCart(product)">ADD TO CART</a>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+</div>
+
+<!-- Swiper 2 -->
+<div class="pb-3 blueback">
+    <h3 class="p-2 mt-4 mb-3 fw-semibold text-white">Best of Diabetes support</h3>
+    <div class="d-flex gap-4">
+        <img src="assets/images/Wellness/Ayurveda_background.png" height="355px" alt="">
+        <div class="w-75 ms-5 ps-2">
+            <swiper [slidesPerView]="5" [spaceBetween]="10" [navigation]="true" [pagination]="{ clickable: true }"
+                [breakpoints]="breakpoints" class="product-slider w-100">
+                <ng-template swiperSlide *ngFor="let product of diabetesproducts">
+                    <div class="card rounded-3 shadow-sm" style="height: 350px;">
+                        <img class="card-img-top" [src]="product.image" alt="" />
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <p class="card-text small">
+                                {{ product.name }}<br />
+                                <b>{{ product.disc_price }}</b>
+                                <span class="text-muted"><del>{{ product.price }}</del></span><br />
+                                <span class="text-success fw-semibold">GET {{ product.disc }}% off</span>
+                            </p>
+                            <a class="btn btn-info col-12" (click)="addToCart(product)">ADD TO CART</a>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+</div>
+
+<div class="p-3">
+    <h3 class="p-2 mt-4 mb-3 fw-semibold">Popular Categories</h3>
+    <div class="d-flex">
+        <div class="card border-0 bg-transparent" *ngFor="let data of popularcat">
+            <img [src]="data" alt="" />
+        </div>
+    </div>
+</div>
+
+<!-- Swiper 3 -->
+<div class="pb-3 greenback">
+    <h3 class="p-2 mt-4 mb-3 fw-semibold text-white">Health Conditions</h3>
+    <div class="d-flex gap-4">
+        <img src="assets/images/Wellness/Health-condition_background.png" height="355px" alt="">
+        <div class="w-75 ms-5 ps-2">
+            <swiper [slidesPerView]="5" [spaceBetween]="10" [navigation]="true" [pagination]="{ clickable: true }"
+                [breakpoints]="breakpoints" class="product-slider w-100">
+                <ng-template swiperSlide *ngFor="let product of healthproducts">
+                    <div class="card rounded-3 shadow-sm" style="height: 350px;">
+                        <img class="card-img-top" [src]="product.image" alt="" />
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <p class="card-text small">
+                                {{ product.name }}<br />
+                                <b>{{ product.disc_price }}</b>
+                                <span class="text-muted"><del>{{ product.price }}</del></span><br />
+                                <span class="text-success fw-semibold">GET {{ product.disc }}% off</span>
+                            </p>
+                            <a class="btn btn-info col-12" (click)="addToCart(product)">ADD TO CART</a>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+</div>
+
+<div class="p-2 mb-5">
+    <h3 class="p-2 mt-4 mb-3 fw-semibold">Health Concerns</h3>
+    <swiper [slidesPerView]="5" [spaceBetween]="10" [navigation]="true" [pagination]="{ clickable: true }"
+        [breakpoints]="breakpoints" class="product-slider w-100">
+        <ng-template swiperSlide *ngFor="let data of healthConcerns">
+            <div class="card rounded-3 shadow-sm" style="height: 300px;"
+                [routerLink]="['/products/productList/',data.routepath]">
+                <img class="card-img-top" [src]="data.img" height="200px" alt="" />
+                <div class="card-body fw-semibold text-center align-content-center">{{ data.title }}</div>
+            </div>
+        </ng-template>
+    </swiper>
+</div>
+
+<!-- Swiper 4 -->
+<div class="pb-3 blueback">
+    <h3 class="p-2 mt-4 mb-3 fw-semibold text-white">Best Sellers in Personal Care</h3>
+    <div class="d-flex gap-4">
+        <img src="assets/images/Wellness/Personal-care_background.png" height="355px" alt="">
+        <div class="w-75 ms-5 ps-2">
+            <swiper [slidesPerView]="5" [spaceBetween]="10" [navigation]="true" [pagination]="{ clickable: true }"
+                [breakpoints]="breakpoints" class="product-slider w-100">
+                <ng-template swiperSlide *ngFor="let product of personalproducts">
+                    <div class="card rounded-3 shadow-sm" style="height: 350px;">
+                        <img class="card-img-top" [src]="product.image" alt="" />
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <p class="card-text small">
+                                {{ product.name }}<br />
+                                <b>{{ product.disc_price }}</b>
+                                <span class="text-muted"><del>{{ product.price }}</del></span><br />
+                                <span class="text-success fw-semibold">GET {{ product.disc }}% off</span>
+                            </p>
+                            <a class="btn btn-info col-12" (click)="addToCart(product)">ADD TO CART</a>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+</div>
+
+<div class="mx-2 my-5 p-2 d-flex justify-content-between bg-white rounded-2 shadow-sm">
+    <div class="d-flex">
+        <img src="assets/images/Wellness/nfm_premium_gold.gif" height="150px" width="150px" alt="">
+        <div class="align-content-center ms-2">
+            <h5>Netmeds First Membership</h5>
+            <p class="p-0 m-0">Get special discounts and offers on Netmeds services.</p>
+            <p class="p-0 m-0">Get 2% NMS Cash on all orders.</p>
+            <p class="p-0 m-0">Get unlimited free delivery.</p>
+        </div>
+    </div>
+    <div class="d-flex gap-4 me-2">
+        <div class="text-center align-content-center">
+            <img src="assets/images/Wellness/flash.png" alt="">
+            Starting at ₹49
+        </div>
+        <button class="btn golden-btn fw-semibold shadow-sm align-self-center">Explore Plans</button>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.manufact1 {
+    >a {
+        color: #0d6efd;
+    }
+}
+
+/* body sections */
+.bbox {
+    width: 100%;
+    height: 600px;
+    background-color: #e0f8ff;
+
+    .bimg {
+        padding: 40px;
+        padding-right: 20px;
+        display: flex;
+
+        img {
+            // Add styles here if needed for the image
+        }
+
+        .inbox {
+            width: 360px;
+            height: 500px;
+            padding-top: 20px;
+            margin-left: 20px;
+            background-color: white;
+
+            .pat {
+                width: 200px;
+                height: 35px;
+                margin-left: 80px;
+                padding-top: 6px;
+                padding-left: 8px;
+                border: 1px solid black;
+                text-align: center;
+            }
+
+            .fill {
+                padding-top: 20px;
+                margin-left: 20px;
+            }
+
+            label {
+                margin-top: 8px;
+                margin-left: 20px;
+                font-size: 16px;
+                color: #02b7c2;
+                display: block;
+                font-weight: 700;
+            }
+
+            input {
+                margin-left: 20px;
+                border: none;
+                border-bottom: 2px solid rgba(21, 27, 57, 0.04);
+                width: 90%;
+                font-size: 14px;
+                color: #151b39;
+                outline: 0;
+                line-height: 23px;
+            }
+
+            .choose {
+                width: 100%;
+                height: 110px;
+                padding-top: 10px;
+                border: 1px solid white;
+                display: flex;
+
+                .choin {
+                    margin-left: 20px;
+                    border: none;
+                    border-bottom: 2px solid rgba(21, 27, 57, 0.04);
+                    width: 40%;
+                    font-size: 14px;
+                    color: #151b39;
+                    outline: 0;
+                    line-height: 23px;
+                }
+            }
+
+            .chekin {
+                width: 10%;
+                padding-left: 20px;
+                display: flex;
+            }
+
+            .addto {
+                width: 300px;
+                margin-top: 20px;
+                margin-left: 20px;
+                background-color: #24aeb1;
+            }
+        }
+    }
+}
+
+.ptest {
+    max-width: 1680px;
+    height: 300px;
+    padding: 0 35px;
+    margin: 0 auto;
+    width: 100%;
+    font-family: Lato, sans-serif;
+}
+
+/* Background color classes */
+.bg-peach {
+    background-color: #fff3ee;
+}
+
+.bg-lightblue {
+    background-color: #e5f7fd;
+}
+
+.bg-lemon {
+    background-color: #fbfdeb;
+}
+
+.bg-cyan {
+    background-color: #e5fcfb;
+}
+
+/* Card styling */
+.card {
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .img-inline {
+        height: 100px;
+    }
+}

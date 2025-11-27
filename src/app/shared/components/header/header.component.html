@@ -1,0 +1,295 @@
+<!-- header -->
+<header class="navbar navbar-expand-lg sticky-top m-0" style="background-color: #32aeb1; min-height: 80px;">
+    <div class="container d-flex">
+        <div class="d-flex align-items-center flex-nowrap flex-column flex-sm-row w-50">
+            <!-- Logo -->
+            <div class="me-2 mt-2">
+                <a routerLink="">
+                    <img src="assets/images/header/netmeds-new-logo.svg" width="160px" alt="Netmeds Logo">
+                </a>
+            </div>
+            <div class="d-flex flex-row bg-white rounded-2 px-2 py-2 my-2 w-100 w-lg-50"
+                style="min-width:200; max-width:640px;">
+                <!-- Delivery -->
+                <div class="d-flex align-items-center border-end pe-sm-2 dropdown mb-2 mb-sm-0"
+                    style="min-width:130px;">
+                    <small class="d-none d-md-inline">
+                        Deliver to <span class="text-success"><strong>110002</strong></span>
+                    </small>
+                    <span class="dropdown-toggle ms-2 me-1 d-inline-block" data-bs-toggle="dropdown" id="deliverId"
+                        role="button" aria-expanded="false" style="cursor:pointer;"></span>
+                    <div class="dropdown-menu" aria-labelledby="deliverId" style="min-width: 300px;">
+                        <div class="p-3">
+                            <b>Where do you want the delivery?</b><br>
+                            <small class="opacity-75">Get access to your Addresses, Orders, and Wishlist</small><br>
+                            <b>Or Enter Pincode</b><br>
+                            <small class="opacity-75">Select pincode to see product availability.</small><br>
+                            <input type="text" class="form-control border p-1 opacity-75 bg-secondary-subtle"
+                                placeholder="Enter Pincode">
+                            <small class="opacity-75 pink">Detect my location</small><br>
+                            <i>Allow to access your location.</i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Search input -->
+                <div class="d-flex ms-2 mt-0" style="min-width:60px;">
+                    <input type="text" class="form-control border-0 p-1 opacity-75 w-100"
+                        placeholder="Search for medicine & wellness products...">
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-evenly">
+            <!-- upload -->
+            <div class="mx-3 d-flex align-items-center">
+                <img src="assets/images/header/upload_rx_icon.svg" [height]="imgsize1" [width]="imgsize1" alt="">
+                <a class="nav-link text-white ms-1" role="button" routerLink="/shared/upload">Upload</a>
+            </div>
+            <!-- offers -->
+            <div class="mx-3 d-flex align-items-center">
+                <img src="assets/images/header/offers_icon.svg" [height]="imgsize1" [width]="imgsize1" alt="">
+                <a class="nav-link text-white ms-1" role="button" routerLink="/shared/offers">Offers</a>
+            </div>
+            <!-- Cart -->
+            <div class="position-relative mx-3 d-flex align-items-center">
+                <img src="assets/images/header/cart_icon.svg" [height]="imgsize1" [width]="imgsize1" alt="Cart">
+                <span class="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style="left: 35%;"
+                    *ngIf="cartCount > 0">{{ cartCount }}</span>
+                <a [routerLink]="['/carts', 'cart']" class="nav-link text-white ms-1" role="button">Cart</a>
+            </div>
+
+            <!-- Sign-in-up / Welcome -->
+
+            <div class="mx-3 d-flex align-items-center">
+                <img src="assets/images/header/profile_icon.svg" [height]="imgsize1" [width]="imgsize1" alt="">
+
+                <ng-container *ngIf="userName; else signInBlock">
+                    <span routerLink="/auth/profile" class="nav-link text-white ms-1 " role="button">
+                        {{userName}}</span>
+                    <button (click)="logout()" class="btn btn-sm btn-outline-danger ms-5">Logout</button>
+                </ng-container>
+
+                
+                <ng-template #signInBlock>
+                    <a routerLink="/auth/login" class="nav-link text-white ms-1" role="button">Sign in / Sign up</a>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- first navbar -->
+<div style="background-color: #32aeb1;" class="pt-2 mt-0">
+    <nav class="container navbar navbar-expand-lg d-flex justify-content-center">
+        <ul class="navbar-nav">
+            <!-- Medicine option -->
+            <li class="nav-item d-flex mx-4 dropdown">
+                <img src="assets/images/header/medicine.svg" [height]="imgsize2" [width]="imgsize2" alt="medicine logo">
+                <a class="nav-link text-white ms-2 dropdown-toggle" routerLink="" data-bs-toggle="dropdown"
+                    aria-expanded="false">Medicine</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="shared/allmedicine">All Medicine</a></li>
+                    <li><a class="dropdown-item" routerLink="shared/BuyAgain">Buy Again</a></li>
+                    <li><a class="dropdown-item" routerLink="shared/OrderOnline">Order Online</a></li>
+                </ul>
+            </li>
+            <!-- wellness option -->
+            <li class="nav-item d-flex mx-4 dropdown-start position-static">
+                <img src="assets/images/header/wellness.svg" [height]="imgsize2" [width]="imgsize2" alt="wellness logo">
+                <a class="nav-link text-white ms-2 dropdown-toggle" routerLink="/shared/wellness"
+                    data-bs-toggle="dropdown" id="megaMenu" aria-expanded="false">Wellness</a>
+                <div class="dropdown-menu mt-0 p-3" aria-labelledby="megaMenu" style="max-width: 850px;">
+                    <div class="d-flex flex-nowrap justify-content-center">
+                        <!-- Column 1 -->
+                        <div class="flex-wrap me-2 border-end" style="width: 175px;">
+                            <!-- <h6 [style]="dropdownstyle">Ayush</h6> -->
+                            <!-- <h6> <a class="dropdown-item opacity-75 text-wrap" [style]="dropdownstyle"
+                                    [routerLink]="['/products/productList','ayushSection']">Ayush</a></h6> -->
+                            <a class="dropdown-item opacity-75 text-wrap" [style]="dropdownstyle"
+                                [routerLink]="['/shared/category','ayush']">Ayush</a>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of ayushroutes"
+                                [routerLink]="['/products/productList',data.routepath]">{{data.category}}</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Covid Essentials</h6>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of covidroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Devices</h6>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of devicesroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                        </div>
+                        <!-- Column 2 -->
+                        <div class="flex-wrap me-2 border-end" style="width: 175px;">
+                            <!-- <h6 [style]="dropdownstyle">Diabetes Support</h6> -->
+                            <a class="dropdown-item opacity-75 text-wrap" [style]="dropdownstyle"
+                                [routerLink]="['/shared/category','diabetes']">Diabetes Support</a>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of diabetesroutes"
+                                [routerLink]="['/products/productList',data.routepath]">{{data.category}}</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Eyewear</h6>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Eye Glasses</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Reading Glasses</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Contact Lenses (EW)</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Fitness</h6>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of fitnessroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                        </div>
+                        <!-- Column 3 -->
+                        <div class="flex-wrap me-2 border-end" style="width: 175px;">
+                            <!-- <h6 [style]="dropdownstyle">Health Conditions</h6> -->
+                             <a class="dropdown-item opacity-75 text-wrap" [style]="dropdownstyle"
+                                [routerLink]="['/shared/category','healthCondition']">Health Conditions</a>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of healthroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Mom & Baby</h6>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of mombabyroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                        </div>
+                        <!-- Column 4 -->
+                        <div class="flex-wrap me-2 border-end" style="width: 175px;">
+                            <!-- <h6 [style]="dropdownstyle">Personal Care</h6> -->
+                              <a class="dropdown-item opacity-75 text-wrap" [style]="dropdownstyle"
+                                [routerLink]="['/shared/category','personalCare']">Personal Care</a>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of personalcareroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Sexual Wellness</h6>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of sexualwellnessroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                        </div>
+                        <!-- Column 5 -->
+                        <div class="flex-wrap me-2" style="width: 175px;">
+                            <h6 [style]="dropdownstyle">Surgical</h6>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of surgicalroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Veterinary</h6>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Petcare</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Farm Animals</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Stores</h6>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Vitamin Store</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Derma Cosmetics</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Diabetes Center</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Trending</h6>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">CeraVe</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Cetaphill</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- Lab tests option -->
+            <li class="nav-item d-flex mx-4 dropdown">
+                <img src="assets/images/header/diagnostics.svg" [height]="imgsize2" [width]="imgsize2"
+                    alt="diagnostic logo">
+                <a class="ms-2 nav-link text-white" role="button" routerLink="/shared/labTest">Lab Tests</a>
+            </li>
+            <!-- Beauty option -->
+            <li class="nav-item d-flex mx-4 dropdown-center">
+                <img src="assets/images/header/wellness.svg" [height]="imgsize2" [width]="imgsize2" alt="wellness logo">
+                <a class="nav-link text-white ms-2 dropdown-toggle" routerLink="/shared/beauty" data-bs-toggle="dropdown"
+                    id="megaMenu1" aria-expanded="false">Beauty</a>
+                <div class="dropdown-menu mt-0 p-3 start-50 translate-middle-x" aria-labelledby="megaMenu1" style="max-width: 600px;">
+                    <div class="d-flex flex-nowrap justify-content-center">
+                        <!-- Column 1 -->
+                        <div class="flex-wrap me-2 border-end" style="width: 150px;">
+                            <!-- <h6 [style]="dropdownstyle">Fragrances</h6> -->
+                               <a class="dropdown-item opacity-75 text-wrap" [style]="dropdownstyle"
+                                [routerLink]="['/shared/category','fragrance']">Fragrances</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','MenProducts']">Men</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','UnisexProducts']">Unisex</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','WomenProducts']">Women</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Hair</h6>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of hairroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Men's Grooming</h6>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Reading Glasses</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Contact Lenses (EW)</a>
+                        </div>
+                        <!-- Column 2 -->
+                        <div class="flex-wrap me-2 border-end" style="width: 150px;">
+                            <!-- <h6 [style]="dropdownstyle">Make-Up</h6> -->
+                            <a class="dropdown-item opacity-75 text-wrap" [style]="dropdownstyle"
+                                [routerLink]="['/shared/category','makeUp']">Make-Up</a>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of makeuproutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Mom & Baby</h6>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of momnbabyroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                        </div>
+                        <!-- Column 3 -->
+                        <div class="flex-wrap me-2 border-end" style="width: 150px;">
+                            <!-- <h6 [style]="dropdownstyle">Personal Care</h6> -->
+                             <a class="dropdown-item opacity-75 text-wrap" [style]="dropdownstyle"
+                                [routerLink]="['/shared/category','personalCare']">Personal Care</a>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of personalcareroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                        </div>
+                        <!-- Column 4 -->
+                        <div class="flex-wrap me-2" style="width: 150px;">
+                            <!-- <h6 [style]="dropdownstyle">Skin Care</h6> -->
+                            <a class="dropdown-item opacity-75 text-wrap" [style]="dropdownstyle"
+                                [routerLink]="['/shared/category','skinCare']">Skin Care</a>
+                            <a class="dropdown-item opacity-75 text-wrap" *ngFor="let data of skincareroutes"
+                                [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+                            <br>
+                            <h6 [style]="dropdownstyle">Tools & Appliances</h6>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Face/Skin Tools</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Hair Styling Tools</a>
+                            <a class="dropdown-item opacity-75 text-wrap"
+                                [routerLink]="['/products/productList/','']">Massage Tools</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- Health Library option -->
+            <li class="nav-item d-flex mx-4 dropdown">
+                <img src="assets/images/header/health-library.svg" [height]="imgsize2" [width]="imgsize2"
+                    alt="health logo">
+                <a class="nav-link text-white ms-2 dropdown-toggle" routerLink="/shared/HealthLibrary"
+                    data-bs-toggle="dropdown" aria-expanded="false">Health Corner</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/shared/HealthLibrary">Health Library</a></li>
+                    <li><a class="dropdown-item" routerLink="/shared/cancer">All About Cancers</a></li>
+                    <li><a class="dropdown-item"  routerLink="/shared/corona-awareness">Corona Awareness</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<!-- second navbar -->
+<div class="container-xxl">
+    <nav class="navbar navbar-expand-lg">
+        <ul class="navbar-nav d-flex flex-wrap">
+            <li class="nav-item" *ngFor="let data of secondnav">
+                <a class="nav-link" role="button"
+                    [routerLink]="['/products/productList/',data.routepath]">{{data.category}}</a>
+            </li>
+        </ul>
+    </nav>
+</div>

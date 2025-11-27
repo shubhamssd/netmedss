@@ -1,0 +1,98 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- LEFT: Order Summary -->
+    <div class="col-md-8" style="max-width: 500px;">
+      <h3 class="mb-4">Order Review</h3>
+
+      <!-- PRESCRIPTION -->
+      <div class="card p-3 mb-3">
+        <h5 class="mb-2">PRESCRIPTION(S) UPLOADED</h5>
+        <img *ngIf="prescriptionPreview" [src]="prescriptionPreview" alt="Prescription" style="max-width: 200px;">
+      </div>
+
+      <!-- PROMO CODE -->
+      <div class="card p-3 mb-3" *ngIf="promoApplied">
+        <h5>PROMO CODE APPLIED</h5>
+        <div class="text-success"><strong>✔ {{ promoCode }}</strong> - You save 20%</div>
+      </div>
+
+      <!-- Add Address Section -->
+      <div class="card p-3 mb-3">
+        <h5>Add Address</h5>
+        <button class="btn btn-outline-primary" (click)="openAddressSidebar()">Add New Address</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: Payment Details -->
+    <div class="col-md-4">
+      <div class="card p-4 sticky-top" style="top: 130px;">
+        <h5>PAYMENT DETAILS</h5>
+        <div class="d-flex justify-content-between mb-2">
+          <span>MRP Total</span>
+          <span>To be decided</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span>Delivery Charges</span>
+          <span>Rs.-</span>
+        </div>
+        <div class="d-flex justify-content-between border-top pt-2 mb-3">
+          <strong>Total Amount</strong>
+          <strong>To be decided</strong>
+        </div>
+        <strong>TOTAL AMOUNT</strong>
+        <div class="fs-5 text-primary mb-3">To be decided</div>
+        <button class="btn btn-teal w-100" (click)="placeOrder()">CONFIRM ORDER</button>
+
+        <p class="mt-3 text-muted small">
+          Netmeds is a technology platform. Read our
+          <a href="#" class="text-decoration-underline">Terms & Conditions</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADDRESS SIDEBAR -->
+<div class="address-sidebar" [class.open]="showAddressSidebar">
+  <div class="sidebar-header d-flex justify-content-between align-items-center p-3 border-bottom bg-light">
+    <h5 class="mb-0">Add New Address</h5>
+    <button class="btn-close" (click)="closeAddressSidebar()"></button>
+  </div>
+  <div class="p-3">
+    <form [formGroup]="addressForm" (ngSubmit)="submitAddress()">
+      <div class="mb-3">
+        <input class="form-control" placeholder="Name" formControlName="name">
+        <div class="text-danger" *ngIf="f['name'].touched && f['name'].invalid">Name is required</div>
+      </div>
+
+      <div class="mb-3">
+        <input class="form-control" placeholder="Mobile Number" formControlName="mobile">
+        <div class="text-danger" *ngIf="f['mobile'].touched && f['mobile'].errors?.['required']">Mobile is required</div>
+        <div class="text-danger" *ngIf="f['mobile'].touched && f['mobile'].errors?.['pattern']">Enter valid 10-digit mobile number</div>
+      </div>
+
+      <div class="mb-3">
+        <input class="form-control" placeholder="Pincode" formControlName="pincode">
+        <div class="text-danger" *ngIf="f['pincode'].touched && f['pincode'].errors?.['required']">Pincode is required</div>
+        <div class="text-danger" *ngIf="f['pincode'].touched && f['pincode'].errors?.['pattern']">Enter valid 6-digit pincode</div>
+      </div>
+
+      <div class="mb-3">
+        <input class="form-control" placeholder="City" formControlName="city">
+        <div class="text-danger" *ngIf="f['city'].touched && f['city'].invalid">City is required</div>
+      </div>
+
+      <div class="mb-3">
+        <input class="form-control" placeholder="State" formControlName="state">
+        <div class="text-danger" *ngIf="f['state'].touched && f['state'].invalid">State is required</div>
+      </div>
+
+      <div class="mb-3">
+        <textarea class="form-control" placeholder="Full Address" formControlName="address" rows="3"></textarea>
+        <div class="text-danger" *ngIf="f['address'].touched && f['address'].invalid">Address is required</div>
+      </div>
+
+      <button class="btn btn-primary w-100" type="submit">Save Address</button>
+    </form>
+  </div>
+</div>

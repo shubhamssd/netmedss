@@ -1,0 +1,61 @@
+<div class="container my-4" *ngIf="coronaData">
+  <h2 class="mb-3">Corona Awareness</h2>
+
+  <!-- Tabs -->
+  <div class="d-flex flex-wrap gap-2 mb-4">
+    <button class="btn" [ngClass]="{ 'btn-info text-white': selectedTab === 'all', 'btn-outline-info': selectedTab !== 'all' }" (click)="selectTab('all')">All</button>
+    <button class="btn" [ngClass]="{ 'btn-info text-white': selectedTab === 'ebooks', 'btn-outline-info': selectedTab !== 'ebooks' }" (click)="selectTab('ebooks')">E-Books</button>
+    <button class="btn" [ngClass]="{ 'btn-info text-white': selectedTab === 'articles', 'btn-outline-info': selectedTab !== 'articles' }" (click)="selectTab('articles')">Articles</button>
+    <button class="btn" [ngClass]="{ 'btn-info text-white': selectedTab === 'videos', 'btn-outline-info':selectedTab !== 'videos' }" (click)="selectTab('videos')">Videos</button>
+  </div>
+
+  <div class="row">
+  <!-- E-Books Section -->
+<ng-container *ngIf="selectedTab === 'all' || selectedTab === 'ebooks'">
+  <div class="col-md-4 mb-4" *ngFor="let ebook of coronaData.ebooks">
+    <div class="card h-100 shadow-sm">
+      <img [src]="ebook.img" class="card-img-top" [alt]="ebook.title">
+      <div class="card-body">
+        <h5 class="card-title">{{ ebook.title }}</h5>
+        <p class="card-text">{{ ebook.subtitle }}</p>
+        <a [href]="ebook.pdf" target="_blank" class="btn btn-sm btn-primary">Read PDF</a>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Articles Section -->
+<ng-container *ngIf="selectedTab === 'all' || selectedTab === 'articles'">
+ <div class="col-md-4 mb-4" *ngFor="let article of coronaData.articles">
+    <div class="card h-100 shadow-sm">
+      <img [src]="article.img" class="card-img-top" [alt]="article.title">
+      <div class="card-body">
+        <h5 class="card-title">{{ article.title }}</h5>
+        <p class="card-text">{{ article.subtitle }}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Videos Section -->
+<ng-container *ngIf="selectedTab === 'all' || selectedTab === 'videos'">
+  <div class="col-md-4 mb-4" *ngFor="let video of coronaData.videos">
+    <div class="card h-100 shadow-sm">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+          class="embed-responsive-item"
+          [src]="getSafeVideoUrl(video.url)"
+          width="100%"
+          height="auto"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ video.title }}</h5>
+        <p class="card-text">{{ video.subtitle }}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>

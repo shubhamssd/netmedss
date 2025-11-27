@@ -1,0 +1,94 @@
+<div class="product-detail  me-2">
+  <div class="product-left-info">
+
+    <div class="thumbnails mt-4">
+      <img *ngFor="let img of product['images']" [src]="img" width="100" height="120" class="thumb_imges ms-4 mt-3" />
+    </div>
+    <div class="main-image">
+      <img [src]="product.mainImage" width="380" height="500" />
+    </div>
+  </div>
+  <div class="product-right-info mt-4 ms-4">
+
+    <h4 style="width: 240px;">{{product.name}}</h4>
+    <div class="d-flex gap-2 mt-4">
+      <p class="product-details-gluco-devices" *ngFor="let cat of product.category">{{cat}}</p>
+    </div>
+    <hr style="color: #585353; font-weight: 500;height: 3px;">
+
+    <div class="d-flex gap-2">
+      <p class="product-details-disc-price">₹{{product.disc_price}} </p>
+      <span class="product-detail-price"> MRP ₹{{product.price}}</span>
+      <span class="product-discount">Save {{product.disc}} %</span>
+    </div>
+    <p style="font-size: 12px; color: #a09898;">Inclusive of all taxes</p>
+    <ng-container *ngFor="let content of product['product-content']">
+      <p class="product-detail-content">{{content}}</p>
+    </ng-container>
+
+    <div class="counter d-flex mt-3">
+      <p class="count me-3">-</p>
+      <p class="count">1</p>
+      <p class="count ms-3">+</p>
+    </div>
+    <button class="product-details-add-to-cart ms-1" (click)="addToCart(product)">ADD TO CART</button>
+    <hr style="color: #585353; font-weight: 500;height: 3px;">
+    <div class="product-expiry">
+      <p class="me-1">
+        <span class="me-4">Availibility & Expiry</span>
+        <span style="color:#02b7c2;">Delevering To</span>
+        <span style="font-size: 20px;color: black;"> 110002</span>
+      </p>
+    </div>
+    <!--  -->
+
+    <!-- carousel -->
+    <div id="netmedsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="card p-3 border border-danger mx-auto" style="max-width: 720px;">
+            <p class="text-danger fw-bold">NETMEDS FIRST: ₹48.70 cashback</p>
+            <div class="d-flex justify-content-between">
+              <div>
+                <h6>Superfast Delivery</h6>
+                <p class="text-muted small">High priority delivery</p>
+              </div>
+            </div>
+            <div class="text-white bg-danger text-center py-2 mt-3">Membership starting from ₹99 for 3 months</div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card p-3 border border-primary mx-auto" style="max-width: 720px;">
+            <p class="text-primary fw-bold">Flat 30% Off on Medicines</p>
+            <div class="d-flex justify-content-between">
+              <div>
+                <h6>Express Delivery</h6>
+                <p class="text-muted small">Within 24 hours</p>
+              </div>
+            </div>
+            <div class="bg-primary text-white text-center py-2 mt-3">Use Code MED20</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#netmedsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#netmedsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <div class="product_disc_details mt-3">
+      <div class="product_disc_info">
+        <p class="ms-4 mb-0">Default Discount</p>
+        <p class="ms-4 mb-0" style="color: green;">You get 30% OFF on this product</p>
+       
+      </div>
+      <p class="me-3 text-danger" >Offer Applied</p>
+    </div>
+    <!--  -->
+  </div>
+</div>

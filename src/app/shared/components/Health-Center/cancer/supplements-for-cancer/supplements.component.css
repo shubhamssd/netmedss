@@ -1,0 +1,45 @@
+.custom-banner-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+.custom-banner-img {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+}
+
+/* View All Button Right-Aligned */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.section-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+.clsviewall {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+  text-align: right;
+}
+.clsviewall:hover {
+  text-decoration: underline;
+}
+
+/* Category Image Grid Without Container */
+.cat_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.drug_details img {
+  width: 220px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+

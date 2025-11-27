@@ -1,0 +1,142 @@
+<h3>Attach Prescription</h3>
+
+<div class="upload-wrapper">
+  <div class="left-section">
+    <!-- VALID PRESCRIPTION GUIDE -->
+    <div class="guide column">
+      <h3>VALID PRESCRIPTION GUIDE</h3>
+      <p>Your Prescription will be sent to the pharmacist for processing.</p>
+      <img src="assets/images/upload/valid_prescription.jpg" alt="Prescription Guide" class="guide-img" />
+      <ul>
+        <li>Do not crop any part of the prescription</li>
+        <li>Avoid blurred images</li>
+        <li>Include details of doctor and patient, date of visit</li>
+        <li>Supported files: PNG, JPEG, PDF</li>
+        <li>File size limit: 5MB</li>
+      </ul>
+    </div>
+
+    <!-- UPLOAD PRESCRIPTION -->
+    <div class="upload column">
+      <h4>UPLOAD PRESCRIPTION</h4>
+      <p>Please upload images of valid prescription from your doctor.</p>
+
+      <label class="upload-btn">
+        <input type="file" hidden (change)="onFileSelected($event)" />
+        <div class="btn-content">
+          <img src="assets/images/upload/upload_icon.jpg" alt="upload" />
+          <span>UPLOAD IMAGE</span>
+        </div>
+      </label>
+
+      <div class="attached">
+        <h5>ATTACHED PRESCRIPTION</h5>
+        <div *ngIf="filePreviewUrl; else noFile" class="preview">
+          <img *ngIf="uploadedFile && uploadedFile.type.startsWith('image/')" [src]="filePreviewUrl" />
+          <img *ngIf="uploadedFile && uploadedFile.type === 'application/pdf'" src="assets/images/upload/upload_icon.jpg" />
+        </div>
+        <ng-template #noFile>
+          <p class="no-file-msg">Uploaded prescriptions will be shown here</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER INFO SECTION -->
+  <div class="order column">
+    <h4>ORDER INFO</h4>
+    <p>Select how do you want to proceed with the order.</p>
+
+    <div class="order-options">
+      <label class="order-option" [class.active]="selectedOrderInfo === 'search'">
+        <input type="radio" name="order" value="search" (change)="onOrderInfoSelect('search')" />
+        <img src="assets/images/upload/bag_icon.png" />
+        <div class="order-content">
+          <span>Search and Add medicines</span>
+          <p>Manually search and add medicines in the cart</p>
+        </div>
+      </label>
+
+      <label class="order-option" [class.active]="selectedOrderInfo === 'call'">
+        <input type="radio" name="order" value="call" (change)="onOrderInfoSelect('call')" />
+        <img src="assets/images/upload/call_icon.png" />
+        <div class="order-content">
+          <span>Get call from Netmeds</span>
+          <p>Netmeds pharmacist/doctors will call to confirm medicines</p>
+        </div>
+      </label>
+    </div>
+<button (click)="onContinue()" class="btn btn-primary">Continue</button>
+
+  </div>
+</div>
+<!-- Banner Slider with Arrows  -->
+<div id="bannerCarousel" class="carousel slide banner-carousel mb-4" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/images/upload/banner1.jpg" class="d-block w-100 banner-img" alt="Banner Image">
+    </div>
+   
+  </div>
+
+  <!-- Arrows  -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+<!-- Customers Speak Heading -->
+<div class="testimonial-heading text-center my-4">
+  <h3><strong>Customers Speak</strong></h3>
+  <p class="text-muted">
+    Customer satisfaction is our prime focus. We would like to hear your comments about our service.
+  </p>
+</div>
+
+<!-- Testimonials Carousel -->
+<div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div
+      *ngFor="let chunk of groupedTestimonials; let i = index"
+      [class]="'carousel-item' + (i === 0 ? ' active' : '')"
+    >
+      <div class="d-flex justify-content-center">
+        <div
+          *ngFor="let testimonial of chunk"
+          class="card testimonial-card mx-3"
+        >
+          <div class="card-body">
+            <h5 class="card-title text-dark fw-bold">{{ testimonial.name }}</h5>
+            <h6 class="card-subtitle mb-2" style="color: #32aeb1;">{{ testimonial.location }}</h6>
+            <p class="card-text">{{ testimonial.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Controls -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#testimonialCarousel"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#testimonialCarousel"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>

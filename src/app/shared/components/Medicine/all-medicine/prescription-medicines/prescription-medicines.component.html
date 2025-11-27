@@ -1,0 +1,51 @@
+<!-- <div class="content">
+    <div class="headingcontent">
+        <p class="headingcontent1">{{key}}</p>
+        <p class="headingcontent2">drug list</p>
+    </div>
+    <div class="abcdbuttons border w-75">
+        <button *ngFor="let btnHead of buttonHeading">{{btnHead}}</button>
+    </div>
+
+    <div class="medicines row col-12">
+        <div *ngFor="let data of allMedicineInfo">
+
+            <div class="d-flex col-2" height="150px" *ngFor="let med of data.medicines">
+                <p class="letter">{{ med.name }}</p>
+                <ul>
+                    <li *ngFor="let variant of med.variants">{{ variant }}</li>
+                </ul>
+            </div>
+              <h4>{{ data.category }}</h4>
+              <p>{{ data.description }}</p>
+        </div>
+    </div>
+</div> -->
+
+<div class="content">
+    <div class="headingcontent">
+        <p class="headingcontent1">{{key}}</p>
+        <p class="headingcontent2">drug list</p>
+    </div>
+    <div class="abcdbuttons border w-75">
+        <button *ngFor="let btnHead of buttonHeading">{{btnHead}}</button>
+    </div>
+
+    <div class="medicines row col-12">
+        <div *ngFor="let data of allMedicineInfo" class="col-12">
+
+            <!-- Loop through medicines -->
+            <div class="medicines-grid">
+                <div class="medicine-card" *ngFor="let med of data.medicines">
+                    <p class="letter">{{ med.name }}</p>
+                    <ul>
+                        <li *ngFor="let variant of med.variants" ><a (click)="goToDetail(variant)">{{ variant }}</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>{{ data.category }}</h4>
+            <p>{{ data.description }}</p>
+        </div>
+    </div>
+</div>

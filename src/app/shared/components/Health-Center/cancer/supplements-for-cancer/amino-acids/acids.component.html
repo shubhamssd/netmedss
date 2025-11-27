@@ -1,0 +1,69 @@
+<div class="row me-2">
+  <!-- Sidebar Section -->
+  <div class="col-3">
+    <app-side-bar (filtersChanged)="applyFilters($event)"></app-side-bar>
+  </div>
+
+  <!-- Main Content: Banner + Products -->
+  <div class="col-9">
+    <!-- Banner Image or Fallback -->
+    <div *ngIf="bannerImg; else fallbackBanner">
+      <img [src]="bannerImg" class="shadow-sm w-100 rounded" />
+    </div>
+
+    <ng-template #fallbackBanner>
+      <div
+        class="banner-div rounded d-flex align-items-start justify-content-start me-2"
+        style="height: 180px"
+      >
+        <p class="banner-text ms-4 mt-3">{{ bannerText || 'Amino Acids' }}</p>
+      </div>
+    </ng-template>
+
+    <!-- Product List -->
+    <div class="row my-4 bg-white p-1 rounded-2">
+      <div
+        class="col-md-3"
+        *ngFor="let product of products"
+        (click)="goToDetail(product.id)"
+      >
+        <div class="card my-3 p-2" style="cursor: pointer">
+          <div class="d-flex justify-content-center">
+            <img
+              class="pro_img"
+              [src]="product.mainImage"
+              [alt]="product.name"
+              width="100"
+              height="140"
+            />
+          </div>
+
+          <p class="product_content mt-3">{{ product.name }}</p>
+
+          <div class="d-flex gap-2 flex-wrap">
+            <p class="product_category mt-2" *ngFor="let dt of product.category">
+              {{ dt }}
+            </p>
+          </div>
+
+          <span class="drug_varient mt-2">
+            Mkt: {{ product.brand | custom: 27 }}
+          </span>
+
+          <p class="product_disc_price mt-1">₹{{ product.disc_price }}</p>
+          <span class="text-decoration-line-through product_old_price mt-1">
+            MRP Rs.{{ product.price }}
+          </span>
+
+          <button
+            appHighlight
+            class="btn mt-4"
+            (click)="addToCart(product); $event.stopPropagation()"
+          >
+            Add To Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

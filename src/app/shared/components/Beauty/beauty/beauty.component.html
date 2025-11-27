@@ -1,0 +1,96 @@
+<div class="container">
+    <img src="assets/Beauty/hero.jpg" class="img">
+</div>
+<div class="second" style="margin-top: 4%;">
+    <h3>In the Spotlight</h3>
+    <img src="/assets/Beauty/netmedsSpotlite.jpg">
+</div>
+<div class="third">
+    <h3>Featured Brands</h3>
+    <div class="third1">
+        <img src="/assets/Beauty/maybelline.jpg">
+        <img src="/assets/Beauty/garnier.jpg">
+        <img src="/assets/Beauty/myglamm.jpg">
+        <img src="/assets/Beauty/colorbar.jpg">
+        <img src="/assets/Beauty/plum.jpg">
+    </div>
+</div>
+<div *ngFor="let section of sections" class="four">
+  <h3>{{ section.title }}</h3>
+  <div class="four1">
+    <a *ngFor="let item of section.items" [routerLink]="[item.path]">
+      <img [src]="item.img" [alt]="item.alt">
+    </a>
+  </div>
+</div>
+
+<div class="latest-beauty-section">
+  <h3 class="section-title">The Latest In Beauty</h3>
+  <div class="latest-cards-container">
+    <div class="card" *ngFor="let item of latestBeauty">
+      <img [src]="item.image" alt="{{item.title}}">
+      <div class="card-body">
+        <p>{{ item.title | slice:0:50 }}...</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="beauty-container">
+  <section class="intro">
+    <h2>Beauty Makeup</h2>
+    <h5>Demand for cosmetics has increased</h5>
+    <p>
+     The global market for cosmetics is expected to rise exponentially in the next 10 years. 
+     The demand for cosmetics online has shot up as beauty products can dramatically improve an individual's overall appearance.
+      In the last decade, cosmetic products have evolved from being a luxury good into an absolute need in modern life. Large multinational companies are focussed on catering to the individual requirements of men and women by offering comprehensive product lines, such as face care, hair care, and body care. In addition, there has been an increasing number of launches of anti-ageing products, while innovative and convenient packaging designs, and on-the-go products in compact containers are becoming very popular. Every individual has a unique combination of hair texture, skin tone, eye colour, and lip shape. As a result, manufacturers are concentrating their efforts on the development and diversification of their product portfolios
+      to meet the special requirements of each individual.
+    </p>
+  </section>
+
+  <section class="grooming">
+    <h5>Importance of Personal Grooming Products</h5>
+    <p>
+      After the pandemic scare, concerns over one's body and well-being are growing due to schedule changes, as well as better eating habits and sleep cycles. Men and women want to appear healthier and more attractive with the use of beauty care products. Consequently, this has led to a growing demand for cosmetic products from younger and aged people. Increasing awareness about the importance of health and personal grooming is fuelling increased demand for sustainable cosmetics, which in turn is driving market expansion.
+    </p>
+  </section>
+
+  <section class="sustainability">
+    <h5>Expanded Awareness about Sustainable Products</h5>
+    <p>
+      On a worldwide scale, beauty products manufactured using ingredients produced from natural sources are more popular since they are safe to use. As people become more conscious of environmental issues, there is more demand for items that are safe for the environment as well. The increased demand for eco-friendly cosmetics and sustainable upcycled packaging can be linked to increased consumer knowledge regarding the potentially harmful impact that man-made chemicals have on both human health and the natural environment.
+    </p>
+  </section>
+
+  <section class="clean-beauty">
+    <h5>New Interest in Clean Beauty Products</h5>
+    <p>
+      The worldwide clean beauty industry is expected to double in the next 5 years. In the past few years, consumers have spent more time on skincare than cosmetics, resulting in a better understanding of product ingredients. Clean beauty signifies that the product is non-toxic, and the listed ingredients are cruelty-free. Consumers are paying close attention to cruelty-free cosmetic products, resulting in a robust demand for clean beauty products. As long as synthetic or laboratory-created components are safe, there will be a consistent long-term demand from clean beauty consumers.
+    </p>
+    <p>Before the pandemic, buyers were more interested in buying beauty products online that make them look seductive. After the pandemic, people are more interested in clean beauty products with environment-friendly packaging that are also aesthetically appealing. Moreover, consumers want beauty products that enhance their well-being, their mood, and desirability. Also, since last year, experts have noted new interest in fragrance and hair care products.</p>
+    <p>Since 2022, market experts have observed that consumers have developed an appetite for health and well-being. Also, people choose to buy specialised hair care products from stores and buy cosmetics online as well. Consumers who invest more in the premium hair care products are focused on sophisticating their premium hair care routines. Additionally, consumer habits are focusing on skin care, cosmetic products, hair colour products, where people seek innovation in cosmetics, not just utility.</p>
+  </section>
+
+  <section class="consumer-trends">
+    <h5>The future</h5>
+    <p>
+      Experts foresee that consumers will buy more skin care, hair care, cosmetic products, and fragrances as people are developing specialised daily morning and night routines. Beauty and body care products are expected to be the fastest-growing markets over the next few years. The expansion of the skin care industry is fuelled by the increased awareness of the adverse effects of synthetic and chemical goods. Additionally, consumers prefer to buy beauty products online as it is more convenient. Thus, the e-commerce industry is expected to boost cosmetic market growth even further. Going forward, cosmetic brands see themselves more as agents of personal growth and social progress. Beauty product manufacturing is increasingly focused on natural ingredients. The beauty industry wants to address climate change and protect Earth’s resources as well. Thus, a holistic concern for the climate and wellbeing of Earth is powering a growing retail niche.
+    </p>
+  </section>
+
+  <section class="future">
+    <h5>The Future</h5>
+    <p>
+      Experts anticipate strong growth in skincare, haircare, and body care markets...
+      With specialised routines and a shift to natural ingredients, e-commerce is boosting online beauty sales.
+      Beauty brands are now seen as agents of self-growth and eco-responsibility.
+    </p>
+  </section>
+
+  <section class="faqs">
+    <h3>FAQs</h3>
+    <div *ngFor="let faq of faqList" class="faq-item">
+      <h6>{{ faq.question }}</h6>
+      <p>{{ faq.answer }}</p>
+    </div>
+  </section>
+</div>
